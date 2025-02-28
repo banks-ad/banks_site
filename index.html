@@ -31,22 +31,23 @@
   <!-- End AppDirect AI -->
 
   <script>
-    const d = document.getElementById('btnAIPS');
-
-     function handleClick(d, s) {
-        var f = d.getElementsByTagName(s)[0], j = d.createElement(s);
-        j.async = true;
-        j.id = 'appdirect-ai-embed';
-        j.dataset.key ='ek-1692bbfc90f72582880da9cb41ceeb2900eacb1d195e08f1';
-        j.src = 'https://appdirect.ai/embed-static/embed.js';
-        f.parentNode.insertBefore(j, f);
-      };
-    
-    button.addEventListener('click', handleClick);
+    function loadAppDirectScript() {
+      var script = document.getElementById('appdirect-ai-embed');
+      if (script) {
+        // Set desired attributes on the already existing element
+        script.async = true;
+        script.dataset.key = 'ek-1692bbfc90f72582880da9cb41ceeb2900eacb1d195e08f1';
+        script.src = 'https://appdirect.ai/embed-static/embed.js';
+      }
+    }
+  
+    document.getElementById('loadScriptBtn')
+            .addEventListener('click', loadAppDirectScript);
   </script>
 </head>
 <body>
-<button id="btnAIPS">Click me</button>
+<button id="loadScriptBtn">Load Script</button>
+<script id="appdirect-ai-embed"></script>
 
 </body>
 </html>
