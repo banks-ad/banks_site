@@ -12,8 +12,13 @@
     </style>
 
     <script>
-        function showIframe() {
-            document.getElementById('iframeContainer').style.display = 'block';
+        function toggleIframe() {
+            var iframeContainer = document.getElementById('iframeContainer');
+            if (iframeContainer.style.display === 'none' || iframeContainer.style.display === '') {
+                iframeContainer.style.display = 'block';
+            } else {
+                iframeContainer.style.display = 'none';
+            }
         }
     </script>
     <style type="text/css">
@@ -39,63 +44,9 @@
    
 </head>
 <body>
-    <button onclick="showIframe()">Open iFrame</button>
-<div id="iframeContainer" 
-    <div id="appdirect-ai-embedded-root">
-   <template shadowrootmode="open">
-      <section>
-         <style data-styled="active" data-styled-version="6.1.13"></style>
-      </section>
-      <div class="appdirect-ai-Container-appdirect-ai-d5juoy jAMpEN">
-         <button class="appdirect-ai-Button-appdirect-ai-1d96jss ejRNmy">
-            <div class="appdirect-ai-DefaultButton-appdirect-ai-ybaflt ljMrsl">
-               <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="appdirectIcon" width="48" height="48" viewBox="0 0 502.1 467.35" focusable="false" fill="#011B58">
-                  <title>AppDirect</title>
-                  <polygon points="150.36 0 253.68 0 455.35 317.43 365.06 355.75 150.36 0" style="opacity: 0.85;"></polygon>
-                  <polygon points="502.1 187.67 455.35 317.43 102.08 467.35 0 398.96 502.1 187.67" style="opacity: 0.75;"></polygon>
-                  <polygon points="150.36 0 253.68 0 102.08 467.35 0 398.96 150.36 0" style="opacity: 0.95;"></polygon>
-               </svg>
-               <span class="appdirect-ai-Text-appdirect-ai-hyfdj9 dfUcLg">AI</span>
-            </div>
-         </button>
-      </div>
-      <div>
-         <div class="react-draggable react-draggable-dragged" style="position: fixed; user-select: auto; width: 400px; height: 1086.3px; display: inline-block; top: 0px; left: 0px; cursor: move; z-index: 2147483637; transform: translate(8px, 18px); max-width: 9.0072e+15px; max-height: 9.0072e+15px; box-sizing: border-box; flex-shrink: 0;">
-            <div>
-               <div class="" style="position: absolute; user-select: none; width: 20px; height: 20px; left: -10px; top: -10px; cursor: nw-resize;"></div>
-               <div class="" style="position: absolute; user-select: none; width: 100%; height: 10px; top: -5px; left: 0px; cursor: row-resize;"></div>
-               <div class="" style="position: absolute; user-select: none; width: 20px; height: 20px; right: -10px; top: -10px; cursor: ne-resize;"></div>
-               <div class="" style="position: absolute; user-select: none; width: 10px; height: 100%; top: 0px; left: -5px; cursor: col-resize;"></div>
-            </div>
-            <div class="appdirect-ai-Container-appdirect-ai-1iof0mr hfZchh">
-               <div class="appdirect-ai-Header-appdirect-ai-swj9uy deBtYG">
-                  <div class="appdirect-ai-MenuButton-appdirect-ai-15g812n kNcreU no-drag">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#011A56" stroke="#011A56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="1"></circle>
-                        <circle cx="12" cy="5" r="1"></circle>
-                        <circle cx="12" cy="19" r="1"></circle>
-                     </svg>
-                  </div>
-                  <div class="appdirect-ai-TitleContainer-appdirect-ai-121okgq fQmPSa"><span color="#011A56" class="appdirect-ai-Title-appdirect-ai-cg25dc cifWwX">Provider Sales Assist</span></div>
-                  <div class="appdirect-ai-CloseButton-appdirect-ai-1e0e06b cmemmi no-drag">
-                     <svg aria-hidden="true" focusable="false" width="1.4em" height="1.4em" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                        <title>Close</title>
-                        <path d="M24 8.5L21.5 6 15 12.5 8.5 6 6 8.5l6.5 6.5L6 21.5 8.5 24l6.5-6.5 6.5 6.5 2.5-2.5-6.5-6.5z" fill="#011A56"></path>
-                     </svg>
-                  </div>
-               </div>
-               <div class="appdirect-ai-Body-appdirect-ai-tdttbc dGYYNW"><iframe src="https://appdirect.ai/embed/cm83tehca003dkz0a11gcitex" width="100%" height="100%" sandbox="allow-popups allow-downloads allow-popups allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-forms" allow="microphone; clipboard-write" class="appdirect-ai-Iframe-appdirect-ai-1p4novq dyhKED"></iframe></div>
-            </div>
-            <div>
-               <div class="" style="position: absolute; user-select: none; width: 10px; height: 100%; top: 0px; cursor: col-resize; right: -5px;"></div>
-               <div class="" style="position: absolute; user-select: none; width: 20px; height: 20px; left: -10px; bottom: -10px; cursor: sw-resize;"></div>
-               <div class="" style="position: absolute; user-select: none; width: 100%; height: 10px; left: 0px; cursor: row-resize; bottom: -5px;"></div>
-               <div class="" style="position: absolute; user-select: none; width: 20px; height: 20px; right: -10px; bottom: -10px; cursor: se-resize;"></div>
-            </div>
-         </div>
-      </div>
-   </template>
-</div>  
-    </div>  
+    <button onclick="toggleIframe()">Open iFrame</button>
+<div id="iframeContainer">
+    <iframe src="https://appdirect.ai/embed/cm83tehca003dkz0a11gcitex" width="100%" height="100%" sandbox="allow-popups allow-downloads allow-popups allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-forms" allow="microphone; clipboard-write" class="appdirect-ai-Iframe-appdirect-ai-1p4novq dyhKED"></iframe>
+</div>
 </body>
 </html>
